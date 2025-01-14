@@ -1,0 +1,8 @@
+PyQt6
+ollama
+pywin32
+termcolor
+pycountry
+pyperclip
+win10toast
+pyinstaller
