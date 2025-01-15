@@ -2,3 +2,5 @@ dist/
 *.spec
 build/*
 __pycache__
+
+.env*
