@@ -1,0 +1,73 @@
+name: Build and Release Python App for Windows
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install -r requirements.txt  # Ensure requirements.txt includes all dependencies
+
+      - name: Build executable
+        run: |
+          pyinstaller --onefile --noconsole --add-data "assets:assets" --add-data "ui:ui" main.py
+        env:
+          PYTHONHASHSEED: 0
+
+      - name: Archive build artifact
+        run: |
+          mkdir dist/releases
+          mv dist/main.exe dist/releases/
+        shell: bash
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-build
+          path: dist/releases
+
+  release:
+    runs-on: windows-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            Build for tag ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/releases/main.exe
+          asset_name: main.exe
+          asset_content_type: application/octet-stream

@@ -29,7 +29,8 @@ class StyleSheet:
     """
 
     INPUT = """
-        QLineEdit {
+        Qc
+        LineEdit {
             padding: 8px;
             border: 2px solid #BDC3C7;
             border-radius: 4px;
@@ -56,12 +57,6 @@ class MainWindow(QMainWindow):
         self.central_widget.setLayout(self.layout)
 
         self.selected_text = selected_text
-
-        header = QLabel("Sagy")
-        header.setFont(QFont("Arial", 26, QFont.Weight.Bold))
-        header.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        header.setStyleSheet("color: #2C3E50; margin-bottom: 10px;")
-        self.layout.addWidget(header)
 
         self.setup_input_section()
 
@@ -94,7 +89,7 @@ class MainWindow(QMainWindow):
 
     def setup_actions_section(self):
         actions_frame = QFrame()
-        actions_frame.setStyleSheet("QFrame { background-color: white; border-radius: 8px; padding: 10px; }")
+        actions_frame.setStyleSheet("QFrame { background-color: white; border-radius: 8px; }")
         actions_layout = QVBoxLayout(actions_frame)
 
         actions_label = QLabel("Quick Actions")
