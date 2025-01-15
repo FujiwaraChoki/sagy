@@ -14,7 +14,7 @@ You can download the latest binaries from the [Releases](https://github.com/Fuji
 1. Clone
 
 ```bash
-git clone git@github.com:FujiwaraChoki:sagy.git
+git clone git@github.com:FujiwaraChoki/sagy.git
 cd sagy
 ```
 
