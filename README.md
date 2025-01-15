@@ -40,8 +40,27 @@ This will launch the initial setup window, and then exit from the App. To start 
 Once you installed all the dependencies, you can build the App using the following command:
 
 ```bash
-chmod +x bin/build.sh
-./bin/build.sh
+pyinstaller --onefile --noconsole --add-data "assets:assets" --add-data "ui:ui" main.py
 ```
 
-Alternatively, just execute the commands in `bin/build.sh` manually (if you don't have git bash installed).
+This will create a `dist` folder with the executable file.
+
+## Usage
+
+Sagy is a simple tool that runs in the background and listens to your keyboard inputs.
+
+In order to first set it up, press `Ctrl + Space` to open the setup window.
+
+After you're done configuring the settings, close the window, and re-open the file.
+
+Now select some text and press `Ctrl + Space` again, to start using Sagy.
+
+## Contributing
+
+If you want to contribute to this project, feel free to fork it and submit a pull request.
+
+Please make sure to follow common sense and coding standards.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
