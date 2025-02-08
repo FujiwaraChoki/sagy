@@ -78,7 +78,7 @@ class FirstLaunch(QMainWindow):
         self.close_callback = close_callback
 
         super().__init__()
-        self.setWindowTitle("Sagy - AI Assistant")
+        self.setWindowTitle("Windows Intelligence - AI Assistant")
         self.setGeometry(100, 100, 600, 400)
         self.setStyleSheet("background-color: #ECF0F1;")
 
@@ -94,7 +94,7 @@ class FirstLaunch(QMainWindow):
         self.welcome_frame.setStyleSheet(StyleSheet.FRAME)
         welcome_layout = QVBoxLayout(self.welcome_frame)
 
-        self.welcome_label = QLabel("Welcome to Sagy!")
+        self.welcome_label = QLabel("Welcome to Windows Intelligence!")
         self.welcome_label.setStyleSheet("font-size: 24px; font-weight: bold; color: #2C3E50;")
         self.welcome_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         welcome_layout.addWidget(self.welcome_label)

@@ -44,7 +44,7 @@ class StyleSheet:
 class MainWindow(QMainWindow):
     def __init__(self, selected_text: str, close_callback: callable):
         super().__init__()
-        self.setWindowTitle("Sagy - AI Assistant")
+        self.setWindowTitle("Windows Intelligence - AI Assistant")
         self.setGeometry(0, 0, 800, 600)
         self.setStyleSheet("background-color: #ECF0F1; color: #2C3E50; font-size: 20px;")
 

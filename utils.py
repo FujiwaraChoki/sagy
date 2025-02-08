@@ -1,7 +1,7 @@
 import os
 import json
 
-CONFIG_FILE_PATH = os.path.join(os.path.expanduser("~"), ".sagy.config.json")
+CONFIG_FILE_PATH = os.path.join(os.path.expanduser("~"), ".windows_intelligence.config.json")
 
 def get_model():
     with open(CONFIG_FILE_PATH, "r") as f:

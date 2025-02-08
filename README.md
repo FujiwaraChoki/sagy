@@ -1,12 +1,12 @@
-# Sagy
+# Windows Intelligence
 
-Sagy is a Python-based AI tool that is designed to be the Apple Intelligence missing in Windows-Systems. It's main purpose is to provide people the ability to improve their spelling.
+Windows Intelligence is a Python-based AI tool that is designed to be the Apple Intelligence missing in Windows-Systems. It's main purpose is to provide people the ability to improve their spelling.
 
 ## Installation
 
 ### Binaries
 
-You can download the latest binaries from the [Releases](https://github.com/FujiwaraChoki/sagy/releases) page.
+You can download the latest binaries from the [Releases](https://github.com/FujiwaraChoki/windows-intelligence/releases) page.
 
 
 ### Manual Installation
@@ -14,8 +14,8 @@ You can download the latest binaries from the [Releases](https://github.com/Fuji
 1. Clone
 
 ```bash
-git clone git@github.com:FujiwaraChoki/sagy.git
-cd sagy
+git clone git@github.com:FujiwaraChoki/windows-intelligence.git
+cd windows-intelligence
 ```
 
 2. Install dependencies
@@ -32,7 +32,7 @@ uv pip install -r requirements.txt
 uv run main.py
 ```
 
-This will launch the initial setup window, and then exit from the App. To start using Sagy, simply re-run the App.
+This will launch the initial setup window, and then exit from the App. To start using Windows Intelligence, simply re-run the App.
 
 
 ## Building from Source
@@ -47,13 +47,13 @@ This will create a `dist` folder with the executable file.
 
 ## Usage
 
-Sagy is a simple tool that runs in the background and listens to your keyboard inputs.
+Windows Intelligence is a simple tool that runs in the background and listens to your keyboard inputs.
 
 In order to first set it up, press `Ctrl + Space` to open the setup window.
 
 After you're done configuring the settings, close the window, and re-open the file.
 
-Now select some text and press `Ctrl + Space` again, to start using Sagy.
+Now select some text and press `Ctrl + Space` again, to start using Windows Intelligence.
 
 ## Contributing
 
