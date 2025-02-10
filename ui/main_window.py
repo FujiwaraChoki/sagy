@@ -41,12 +41,14 @@ class StyleSheet:
         }
     """
 
-class MainWindow(QMainWindow):
+class MaputWindow(QMainWindow):
     def __init__(self, selected_text: str, close_callback: callable):
         super().__init__()
         self.setWindowTitle("Windows Intelligence - AI Assistant")
         self.setGeometry(0, 0, 800, 600)
-        self.setStyleSheet("background-color: #ECF0F1; color: #2C3E50; font-size: 20px;")
+        self.setStyleSheet("background-color: #ECF0F1; \
+                           color: #2C3E50; \
+                           font-size: 20px;")
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
@@ -72,7 +74,7 @@ class MainWindow(QMainWindow):
         input_layout = QVBoxLayout(input_frame)
 
         self.question_input = QLineEdit()
-        self.question_input.setPlaceholderText("Ask anything about the selected text...")
+        self.question_input.setPlaceholderText("Refactor")
         self.question_input.setStyleSheet(StyleSheet.INPUT)
         self.question_input.setMinimumHeight(40)
 
@@ -102,12 +104,11 @@ class MainWindow(QMainWindow):
         # Standard actions
         self.proofread_button = QPushButton("🔍 Proofread")
         self.summarize_button = QPushButton("📝 Summarize")
-
-        # New actions
         self.continue_button = QPushButton("🔄 Continue")
         self.simplify_button = QPushButton("📖 Simplify")
         self.format_button = QPushButton("✨ Format")
 
+        # Generate elements
         for button in [
             self.proofread_button,
             self.summarize_button,
@@ -115,6 +116,7 @@ class MainWindow(QMainWindow):
             self.simplify_button,
             self.format_button
         ]:
+            # Set button styles
             button.setStyleSheet(StyleSheet.BUTTON)
             buttons_layout.addWidget(button)
 

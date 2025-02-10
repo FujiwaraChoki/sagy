@@ -1,5 +1,7 @@
 # Windows Intelligence
 
+![Windows Intelligence Logo](assets/logo.png)
+
 Windows Intelligence is a Python-based AI tool that is designed to be the Apple Intelligence missing in Windows-Systems. It's main purpose is to provide people the ability to improve their spelling.
 
 ## Installation
